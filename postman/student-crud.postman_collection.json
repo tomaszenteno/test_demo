@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "5f6f13f8-fb45-4dc4-9826-0555b7d9a9a1",
+		"name": "Demo Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18142550"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Students",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwicm9sZUlkIjoxLCJjc3JmX2htYWMiOiI4MTIzMTI4M2U5MmQxZTA5Y2Q4NzMxYjIwYWE4MjM1ZTcxODc3YzY5OGExNWZkMDUzMDM4YTVkZWZiNTFmZDlkIiwiaWF0IjoxNzY3NzMzMTA1LCJleHAiOjE3Njc3MzQwMDV9.E6LYMzQT9JLVajBy1xsv-aLEEaM2Ko-4fSMe1p5VY3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "c254bb0c-37d2-4b08-a81a-2c2efc9de0ee",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "c254bb0c-37d2-4b08-a81a-2c2efc9de0ee",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test Student 1\",\r\n  \"email\": \"unique.student1@example.com\",\r\n  \"gender\": \"Male\",\r\n  \"phone\": \"123456789\",\r\n  \"dob\": \"2010-01-01\",\r\n  \"currentAddress\": \"Some address\",\r\n  \"permanentAddress\": \"Some address\",\r\n  \"fatherName\": \"Father Test\",\r\n  \"fatherPhone\": \"111111\",\r\n  \"motherName\": \"Mother Test\",\r\n  \"motherPhone\": \"222222\",\r\n  \"guardianName\": \"Guardian Test\",\r\n  \"guardianPhone\": \"333333\",\r\n  \"relationOfGuardian\": \"Uncle\",\r\n  \"systemAccess\": true,\r\n  \"admissionDate\": \"2025-01-01\",\r\n  \"roll\": 1\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Student",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "1efcce2d-a9f0-4e59-a200-4b1536f0747f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 5,\r\n  \"name\": \"Test Student 1 - Updated\",\r\n  \"email\": \"unique.student1@example.com\",\r\n  \"gender\": \"Male\",\r\n  \"phone\": \"987654321\",\r\n  \"dob\": \"2010-01-01\",\r\n  \"currentAddress\": \"New address\",\r\n  \"permanentAddress\": \"New address\",\r\n  \"fatherName\": \"Father Updated\",\r\n  \"fatherPhone\": \"111111\",\r\n  \"motherName\": \"Mother Updated\",\r\n  \"motherPhone\": \"222222\",\r\n  \"guardianName\": \"Guardian Updated\",\r\n  \"guardianPhone\": \"333333\",\r\n  \"relationOfGuardian\": \"Uncle\",\r\n  \"systemAccess\": true,\r\n  \"admissionDate\": \"2025-01-01\",\r\n  \"roll\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/students/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"students",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "1efcce2d-a9f0-4e59-a200-4b1536f0747f",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/students/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"students",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
